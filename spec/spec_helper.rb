@@ -16,6 +16,7 @@
 
 require 'rspec'
 require './app/services/weather_service'
+# require './app/models/weather'
 require 'rubygems'
 require 'pry'
 require 'net/http'
