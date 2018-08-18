@@ -12,10 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20180818083056) do
 
-  create_table "weathers", force: :cascade do |t|
+  create_table "weathers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "city"
-    t.float "high"
-    t.float "low"
+    t.float "high", limit: 24
+    t.float "low", limit: 24
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
