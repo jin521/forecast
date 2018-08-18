@@ -16,12 +16,13 @@
 
 require 'rspec'
 require './app/services/weather_service'
-# require './app/models/weather'
+require './app/models/weather'
 require 'rubygems'
 require 'pry'
 require 'net/http'
 require 'json'
 require 'date'
+require 'rails'
 
 
 RSpec.configure do |config|
