@@ -20,10 +20,17 @@
     </ul>
   </nav>
     <div class="col-md-8 col-md-offset-2">
+
       <div class="wrapper">
-      <h2>Hello beautiful, today is  <%= Time.now.strftime("%d/%m/%Y") %></h2>
-      <%= content_tag :div, "", id: "forecast_chart", data: {forecasts: @forecasts } %>
-      <h2>Find out the weather forecast for: </h2>
+        <h2>Hello beautiful, today is  <%= Time.now.strftime("%d/%m/%Y") %></h2>
+        <% if !@forecasts.nil? %>
+          <div class="chart">
+            <h3> Here is he recent temperture trend for <%= @city_name %></h3>
+            <%= content_tag :div, "", id: "forecast_chart", data: {forecasts: @forecasts } %>
+          </div>
+        <% end %>    
+      </div>
+      <h2>Find out the lastest weather forecast for: </h2>
         <div class="row item button-text">
           <div class="col-md-6">
             <a href="#" data-city="sydney" class="btn btn-lg btn-block js-get-forecast">Sydney</a>
@@ -55,7 +62,7 @@
 
   <script>
       new Morris.Line({
-    // ID of the element in which to draw the chart.
+          // ID of the element in which to draw the chart.
           element: 'forecast_chart',
           // Chart data records -- each entry in this array corresponds to a point on
           // the chart.
@@ -63,11 +70,11 @@
           // The name of the data record attribute that contains x-values.
           xkey: 'date',
           // A list of names of data record attributes that contain y-values.
-          ykeys: ['high'],
+          ykeys: ['high', 'low'],
           parseTime: false,
           // Labels for the ykeys -- will be displayed when you hover over the
           // chart.
-          labels: ['temp forecast']
+          labels: ['high', 'low']
     });
   </script>
 </body>
