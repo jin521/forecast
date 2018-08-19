@@ -21,7 +21,7 @@
 }
 
 .card {
-  margin-top: 20px;
+  margin-top: 50px;
   padding: 10px;
   min-height: 400px;
   font-size: 15px;
@@ -46,6 +46,7 @@
 
 #city-name {
   font-size: 30px;
+  color: #008798
 }
 
 a:link {
@@ -53,4 +54,8 @@ a:link {
 }
 a:active {
   text-decoration: underline;
+}
+
+#forecast_chart {
+  margin-bottom: 30px;
 }
