@@ -1,6 +1,6 @@
 # Forecast
 
-A Rails application that shows weather for 2 locations, user is able to select the location of their choice (Sydney or Melbourne), After selecting the location, the user will be shown the forecast for the next few days. A line chart that inicates teperature trend(High and low) is also avalaible for the last checked records.
+A Rails application that shows weather for 2 locations, user is able to select the location of their choice (Sydney or Melbourne), After selecting the location, the user will be shown the forecast for the next few days. A line chart that indicates teperature trend(High and low) is also avalaible for the last checked records.
 
 ## Technologies used
 - Ruby
