@@ -1,3 +1,4 @@
+require 'spec_helper'
 
 describe 'weather service' do
   subject(:weather_service) { WeatherService.new('sydney') }
@@ -25,6 +26,7 @@ describe 'weather service' do
 
   it '#get_forecast' do
     expect(weather_service.get_forecast).to be_an_instance_of(Array)
-    expect(weather_service.get_forecast.first).to have_attributes(:city, :high, :low, :description)
+    expect(weather_service.get_forecast.first).to be_an_instance_of(Weather)
+    expect(weather_service.get_forecast.first).to respond_to(:city, :high, :low, :description, :day, :date)
   end
 end

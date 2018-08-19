@@ -26,7 +26,7 @@ class WeatherService
     weather_collector = []
 
     forecasts.map do |forecast|
-      weather = ::Weather.create!(
+      weather = Weather.create!(
         city: @city,
         date: forecast['date'],
         day: forecast['day'],

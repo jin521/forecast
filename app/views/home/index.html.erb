@@ -20,7 +20,6 @@
     </ul>
   </nav>
     <div class="col-md-8 col-md-offset-2">
-
       <div class="wrapper">
         <h2>Hello beautiful, today is  <%= Time.now.strftime("%d/%m/%Y") %></h2>
         <% if !@forecasts.nil? %>
@@ -28,7 +27,7 @@
             <h3> Here is he recent temperture trend for <%= @city_name %></h3>
             <%= content_tag :div, "", id: "forecast_chart", data: {forecasts: @forecasts } %>
           </div>
-        <% end %>    
+        <% end %>
       </div>
       <h2>Find out the lastest weather forecast for: </h2>
         <div class="row item button-text">
