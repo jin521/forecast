@@ -21,7 +21,7 @@
   </nav>
     <div class="col-md-8 col-md-offset-2">
       <div class="wrapper">
-        <h2>Hello beautiful, today is  <%= Time.now.strftime("%d/%m/%Y") %></h2>
+        <h2>Hello! today is  <%= Time.now.strftime("%d/%m/%Y") %></h2>
         <% if !@forecasts.nil? %>
           <div class="chart">
             <h3> Here is he recent temperture trend for <%= @city_name %></h3>
@@ -40,7 +40,7 @@
       </div>
       <div class="card" id="container">
         <h3 id="prompt">Click on a button to see the forecasts!</h3>
-        <h3 id="table-title" style="display: none;">forecast in the next 7 days for <span id="city-name"></span>: </h3>
+        <h3 id="table-title" style="display: none;">forecast in the next every 3 hours for <span id="city-name"></span>: </h3>
           <table class="table">
             <tbody id="results">
               <thead>

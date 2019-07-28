@@ -30,7 +30,6 @@ $(document).ready(function() {
 
     $.get('/weather/' + cityName).then(function(data) {
       console.log(data)
-      loading.remove();
 
       var results = $( "#results" );
 
@@ -45,6 +44,8 @@ $(document).ready(function() {
         + '</tr>');
         results.append(element);
       });
+
+      loading.remove();
     });
 
     return false;
