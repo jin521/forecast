@@ -12,7 +12,8 @@ A Rails application that shows weather for 2 locations, user is able to select t
 - Javascript
 - Morris gem
 - mysql2
-- Yahoo Weather API
+- Yahoo Weather API(As of Thursday, Jan. 3, 2019, the query.yahooapis.com for Yahoo Weather API is retired.)
+- Open weather AP( https://openweathermap.org/api )
 - guard
 
 ## How to use
