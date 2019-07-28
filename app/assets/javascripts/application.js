@@ -10,6 +10,44 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
+//= require morris
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('.js-get-forecast').click(function(event){
+    event.preventDefault();
+    $('#prompt').hide();
+    $('#table-title').show();
+    var cityName = $(this).data('city');
+    $('#city-name').text(cityName);
+    $( "#results" ).empty();
+
+    var loading = $('<img>').attr('src', "/assets/loading10.gif");
+    $('#container').append(loading);
+
+    $.get('/weather/' + cityName).then(function(data) {
+      console.log(data)
+
+      var results = $( "#results" );
+
+      data.forEach(function(forecast) {
+        var element = $(
+        '<tr class="looking-cool">'
+        + '<td class="table-primary">' + forecast.date + '</td>'
+        + '<td class="table-primary">' + forecast.day + '</td>'
+        + '<td class="table-primary">' + forecast.high + '</td>'
+        + '<td class="table-primary">' + forecast.low + '</td>'
+        + '<td class="table-primary">' + forecast.description + '</td>'
+        + '</tr>');
+        results.append(element);
+      });
+
+      loading.remove();
+    });
+
+    return false;
+  });
+});
